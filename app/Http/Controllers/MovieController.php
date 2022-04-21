@@ -12,11 +12,9 @@ class MovieController extends Controller
         // recupero dati
 
         $movies = Movie::all();
-
-        dump($movies);
         
         // return della vista
 
-        return view('home');
+        return view('home', compact('movies'));
     }
 }
