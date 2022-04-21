@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\models\Movie;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -10,6 +11,10 @@ class MovieController extends Controller
 
         // recupero dati
 
+        $movies = Movie::all();
+
+        dump($movies);
+        
         // return della vista
 
         return view('home');
