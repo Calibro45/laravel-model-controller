@@ -13,28 +13,33 @@
 
             <h1 class="page-title">Movies</h1>
     
-            <ol>
+            <ol class="movie-grid">
+
                 {{-- ciclo movies card --}}
+
                 @foreach ($movies as $movie)
-                    <li>
-                        <div>
+                    <li class="movie-card">
+                        <div class="card_header">
                             <h4>{{ $movie['title'] }}</h4>
     
                             {{-- controllo titolo uguale originale --}}
     
                             @if ($movie['original_title'] != $movie['title'])
-                                <h4>{{ $movie['original_title'] }}</h4>
+                                <h4>- {{ $movie['original_title'] }} -</h4>
                             @endif
                         </div>
-                        <div>
+
+                        <div class="card_body">
                             <p>Nation: {{ $movie['nationality'] }}</p>
                             <p>Date:{{ $movie['date'] }}</p>
                         </div>
-                        <div>
+
+                        <div class="card_footer">
                             <p>Vote: {{ $movie['vote'] }}</p>
                         </div>
                     </li>
                 @endforeach
+                
             </ol>
 
         </div>
